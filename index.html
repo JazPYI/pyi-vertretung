@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andreas Wochenendkurse: Vertretung gesucht">
+<meta property="og:description" content="Tippe deine Termine an und schick sie mir direkt per WhatsApp.">
+<meta property="og:image" content="https://jazpyi.github.io/pyi-vertretung/preview.png">
+<meta property="og:url" content="https://jazpyi.github.io/pyi-vertretung/">
+<title>PYI Andreas Wochenendkurse Vertretung</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:#F7F3EC;color:#3B2F25;font-family:Georgia,'Lora','Times New Roman',serif;padding:28px 18px 190px;max-width:560px;margin:0 auto}
+.top{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#A8703F}
+.rule{height:2px;width:60px;background:#A8703F;margin:12px 0 16px}
+h1{font-size:30px;line-height:1.12}
+.sub{margin-top:10px;font-size:16px;line-height:1.4;color:#6B5848}
+.we{margin-top:26px}
+.wh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #A8703F;padding-bottom:6px;margin-bottom:10px}
+.wh b{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#A8703F;font-weight:400}
+.wh button{background:none;border:none;font:inherit;font-size:14px;color:#A8703F;text-decoration:underline;padding:6px 0 6px 12px}
+.chip{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#FFFDF8;border:2px solid #E2D6C3;border-radius:16px;padding:14px 16px;margin-bottom:10px;font:inherit;color:inherit;cursor:pointer}
+.chip .box{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid #CDBDA5;display:flex;align-items:center;justify-content:center;color:transparent;font-size:17px;line-height:1}
+.chip .tx{flex:1}
+.chip .d{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#A8703F}
+.chip .n{font-size:18px;font-weight:700;line-height:1.2;margin-top:2px}
+.chip .t{font-size:14px;color:#6B5848;margin-top:3px}
+.chip .l{font-size:11px;letter-spacing:1px;text-transform:uppercase;border:1.5px solid #A8703F;color:#A8703F;border-radius:12px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+.chip.on{background:#F3E4D0;border-color:#A8703F}
+.chip.on .box{background:#A8703F;border-color:#A8703F;color:#FFFDF8}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#F7F3EC;border-top:2px solid #E2D6C3;padding:12px 18px calc(14px + env(safe-area-inset-bottom))}
+.bar .in{max-width:560px;margin:0 auto}
+.bar input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:2px solid #E2D6C3;border-radius:12px;background:#FFFDF8;color:#3B2F25;margin-bottom:10px}
+.send{display:block;width:100%;text-align:center;text-decoration:none;font:inherit;font-size:18px;font-weight:700;background:#A8703F;color:#FFFDF8;border-radius:14px;padding:15px;border:none}
+.send.off{background:#CDBDA5;pointer-events:none}
+.hint{font-size:13px;color:#6B5848;text-align:center;margin-top:8px}
+.foot{margin-top:28px;font-size:14px;color:#6B5848}
+</style></head><body>
+<div class="top">Power Yoga Institut · Winterhude</div>
+<div class="rule"></div>
+<h1>Wer kann am Wochenende einspringen?</h1>
+<p class="sub">Andreas Kurse, 28. November bis 20. Dezember. Tippe alle Termine an, die du übernehmen könntest. Auch einzelne Termine helfen.</p>
+<div id="list"></div>
+<p class="foot">Live = mit Livestream. Danke euch 💛</p>
+<div class="bar"><div class="in">
+<input id="name" type="text" placeholder="Dein Name" autocomplete="given-name">
+<a id="send" class="send off" href="#" target="_blank" rel="noopener">Termine antippen</a>
+<div class="hint" id="hint">Es öffnet sich WhatsApp mit einer fertigen Nachricht an Jaz.</div>
+</div></div>
+<script>
+// WhatsApp Nummer von Jaz im Format 491701234567 (ohne + und ohne Leerzeichen). Leer = Kontakt wird in WhatsApp ausgewählt.
+var NUMBER = "491716954248";
+var courses=[
+ {n:"Matten Pilates",day:"Sa",t:"9:30 bis 10:30 Uhr",live:true,k:0},
+ {n:"Yin Flow und Meditation",day:"Sa",t:"11:00 bis 12:15 Uhr",live:true,k:0},
+ {n:"Yoga x Pilates und Breathwork",day:"So",t:"11:00 bis 12:15 Uhr",live:true,k:1},
+ {n:"Reformer x Sculpt",day:"So",t:"12:30 bis 13:15 Uhr",live:false,k:1}
+];
+var weekends=[["28.11.","29.11."],["05.12.","06.12."],["12.12.","13.12."],["19.12.","20.12."]];
+var sel={};
+var list=document.getElementById("list");
+weekends.forEach(function(w,wi){
+  var s=document.createElement("div");s.className="we";
+  var h=document.createElement("div");h.className="wh";
+  h.innerHTML="<b>Wochenende "+(wi+1)+" · "+w[0].slice(0,5)+" / "+w[1]+"</b>";
+  var all=document.createElement("button");all.textContent="Alle";
+  all.onclick=function(){
+    var ids=courses.map(function(c,ci){return wi+"_"+ci});
+    var every=ids.every(function(i){return sel[i]});
+    ids.forEach(function(i){sel[i]=!every});render();
+  };
+  h.appendChild(all);s.appendChild(h);
+  courses.forEach(function(c,ci){
+    var id=wi+"_"+ci;
+    var b=document.createElement("button");b.className="chip";b.id="c"+id;
+    b.innerHTML='<span class="box">✓</span><span class="tx"><div class="d">'+c.day+" "+w[c.k]+'</div><div class="n">'+c.n+(c.live?' <span class="l">Live</span>':'')+'</div><div class="t">'+c.t+'</div></span>';
+    b.onclick=function(){sel[id]=!sel[id];render()};
+    s.appendChild(b);
+  });
+  list.appendChild(s);
+});
+function render(){
+  var lines=[],n=0;
+  weekends.forEach(function(w,wi){courses.forEach(function(c,ci){
+    var id=wi+"_"+ci,el=document.getElementById("c"+id);
+    el.classList.toggle("on",!!sel[id]);
+    if(sel[id]){n++;lines.push(c.day+" "+w[c.k]+" "+c.n+", "+c.t);}
+  });});
+  var a=document.getElementById("send");
+  if(!n){a.className="send off";a.textContent="Termine antippen";a.removeAttribute("href");return;}
+  var nm=document.getElementById("name").value.trim();
+  var msg="Hallo Jaz 💛 ich kann bei Andreas Wochenendkursen in Winterhude übernehmen:\n\n"+lines.join("\n")+"\n\nLiebe Grüße"+(nm?"\n"+nm:"");
+  a.className="send";
+  a.textContent="Per WhatsApp senden ("+n+(n==1?" Termin":" Termine")+")";
+  a.href="https://wa.me/"+NUMBER+"?text="+encodeURIComponent(msg);
+}
+document.getElementById("name").addEventListener("input",render);
+render();
+</script></body></html>
