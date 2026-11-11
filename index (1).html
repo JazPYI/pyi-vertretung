@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F3EC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andreas Wochenendkurse: Vertretung gesucht">
+<meta property="og:description" content="Termine antippen, per WhatsApp schicken – dauert eine Minute.">
+<meta property="og:image" content="https://jazpyi.github.io/pyi-vertretung/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jazpyi.github.io/pyi-vertretung/">
+<title>PYI · Vertretung Wochenendkurse</title>
+<style>
+:root{--bg:#F7F3EC;--card:#FFFDF8;--ink:#2B2621;--muted:#7A6F63;--line:#E6DCCD;--amber:#A8703F;--amber-soft:#F1E4D4;--green:#25D366;--green-dark:#1DA851}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:150px}
+.wrap{max-width:560px;margin:0 auto;padding:28px 16px 0}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:30px;line-height:1.2;margin:8px 0 12px}
+.intro{color:var(--ink);margin:0 0 18px}
+.steps{list-style:none;margin:0 0 24px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;padding:6px 0}
+.steps li:before{content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.we{margin:0 0 22px}
+.wh{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:0 0 8px;margin:0 0 10px}
+.wh b{font-family:Georgia,serif;font-weight:normal;font-size:19px}
+.all{font:inherit;font-size:14px;color:var(--amber);background:none;border:1px solid var(--amber);border-radius:999px;padding:5px 12px;cursor:pointer}
+.all.on{background:var(--amber);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{font:inherit;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px 12px 12px 12px;cursor:pointer;color:var(--ink);position:relative;min-height:104px}
+.chip .d{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.chip .n{display:block;font-weight:600;margin:3px 0 2px;line-height:1.3;padding-right:22px}
+.chip .t{display:block;font-size:14px;color:var(--muted)}
+.chip .tag{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--amber);background:var(--amber-soft);border-radius:6px;padding:2px 6px}
+.chip .box{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:transparent}
+.chip.on{border-color:var(--green-dark);background:#EAF8EF}
+.chip.on .box{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.name{margin:8px 0 6px}
+.name label{display:block;font-weight:600;margin:0 0 6px}
+.name input{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.name input:focus{outline:none;border-color:var(--amber)}
+.note{font-size:14px;color:var(--muted);margin:6px 0 0}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(247,243,236,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.bar .in{max-width:560px;margin:0 auto}
+.send{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;font:inherit;font-size:clamp(15px,4.3vw,18px);white-space:nowrap;font-weight:700;background:var(--green);color:#fff;border-radius:14px;padding:15px;border:none}
+.send:active{background:var(--green-dark)}
+.send.off{background:#D9CFC1;color:#fff;pointer-events:none}
+.send svg{width:22px;height:22px;fill:currentColor}
+.hint{font-size:13px;color:var(--muted);text-align:center;margin:7px 0 0}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="kicker">Power Yoga Institut · Winterhude</div>
+  <h1>Wer kann am Wochenende einspringen?</h1>
+  <p class="intro">Für Andreas Kurse vom 28. November bis 20. Dezember suchen wir Vertretungen. Schön, dass du reinschaust! Jeder einzelne Termin, den du übernehmen kannst, hilft uns schon sehr.</p>
+  <ol class="steps">
+    <li><span>Tippe alle Termine an, die du übernehmen könntest. Grün heißt ausgewählt, nochmal tippen hebt es wieder auf.</span></li>
+    <li><span>Trag unten deinen Namen ein.</span></li>
+    <li><span>Tippe auf den grünen Knopf. WhatsApp öffnet sich mit fertiger Nachricht an mich – du musst nur noch auf <b>Senden</b> tippen.</span></li>
+  </ol>
+
+  <div id="list"></div>
+
+  <div class="name">
+    <label for="name">Dein Name</label>
+    <input id="name" type="text" placeholder="z. B. Laura" autocomplete="given-name">
+    <p class="note">Ich melde mich danach persönlich bei dir und bestätige, welche Termine fix sind. Danke dir von Herzen für deine Unterstützung 💛</p>
+  </div>
+</main>
+
+<div class="bar"><div class="in">
+  <a id="send" class="send off" href="#">Termine antippen</a>
+  <p class="hint" id="hint">Noch kein Termin ausgewählt</p>
+</div></div>
+
+<script>
+// WhatsApp-Nummer von Jaz: international, ohne + und ohne Leerzeichen (0171 6954248 -> 491716954248)
+var NUMBER = "491716954248";
+var courses = [
+ {n:"Matten Pilates",day:"Sa",t:"9:30 bis 10:30 Uhr",live:true,k:0},
+ {n:"Yin Flow und Meditation",day:"Sa",t:"11:00 bis 12:15 Uhr",live:true,k:0},
+ {n:"Yoga x Pilates und Breathwork",day:"So",t:"11:00 bis 12:15 Uhr",live:true,k:1},
+ {n:"Reformer x Sculpt",day:"So",t:"12:30 bis 13:15 Uhr",live:false,k:1}
+];
+var weekends = [["28.11.","29.11."],["05.12.","06.12."],["12.12.","13.12."],["19.12.","20.12."]];
+var sel = {};
+var list = document.getElementById("list");
+var WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>';
+
+weekends.forEach(function(w,wi){
+  var s=document.createElement("section");s.className="we";
+  var h=document.createElement("div");h.className="wh";
+  h.innerHTML="<b>Wochenende "+(wi+1)+" · "+w[0]+" / "+w[1]+"</b>";
+  var all=document.createElement("button");all.type="button";all.className="all";all.id="all"+wi;all.textContent="Alle";
+  all.onclick=function(){
+    var ids=courses.map(function(c,ci){return wi+"_"+ci});
+    var every=ids.every(function(id){return sel[id]});
+    ids.forEach(function(id){if(every)delete sel[id];else sel[id]=true});
+    render();
+  };
+  h.appendChild(all);s.appendChild(h);
+  var g=document.createElement("div");g.className="grid";
+  courses.forEach(function(c,ci){
+    var id=wi+"_"+ci;
+    var b=document.createElement("button");b.type="button";b.className="chip";b.id="c"+id;
+    b.innerHTML='<span class="box">✓</span><span class="d">'+(c.day==="Sa"?"SA":"SO")+" "+w[c.k]+'</span><span class="n">'+c.n+'</span><span class="t">'+c.t+'</span>'+(c.live?'<span class="tag">LIVE</span>':'');
+    b.onclick=function(){if(sel[id])delete sel[id];else sel[id]=true;render();};
+    g.appendChild(b);
+  });
+  s.appendChild(g);list.appendChild(s);
+});
+
+function render(){
+  var lines=[],n=0;
+  weekends.forEach(function(w,wi){
+    var cnt=0;
+    courses.forEach(function(c,ci){
+      var id=wi+"_"+ci,el=document.getElementById("c"+id);
+      el.classList.toggle("on",!!sel[id]);
+      el.setAttribute("aria-pressed",sel[id]?"true":"false");
+      if(sel[id]){n++;cnt++;lines.push("• "+c.day+" "+w[c.k]+" – "+c.n+", "+c.t);}
+    });
+    var a=document.getElementById("all"+wi);
+    a.classList.toggle("on",cnt===courses.length);
+    a.textContent=cnt===courses.length?"Alle ✓":"Alle";
+  });
+  var a=document.getElementById("send"),hint=document.getElementById("hint");
+  if(!n){a.className="send off";a.textContent="Termine antippen";a.setAttribute("href","#");hint.textContent="Noch kein Termin ausgewählt";return;}
+  var nm=document.getElementById("name").value.trim();
+  var msg="Hallo Jaz 💛 ich kann bei Andreas Wochenendkursen in Winterhude übernehmen:\n\n"+lines.join("\n")+"\n\nLiebe Grüße"+(nm?"\n"+nm:"");
+  a.className="send";
+  a.innerHTML=WA_ICON+"<span>Per WhatsApp senden ("+n+(n===1?" Termin":" Termine")+")</span>";
+  a.href="https://wa.me/"+NUMBER+"?text="+encodeURIComponent(msg);
+  hint.textContent="WhatsApp öffnet sich – dort nur noch auf Senden tippen. Danke dir!";
+}
+// Im selben Fenster öffnen: neue Fenster werden auf dem Handy oft geblockt
+document.getElementById("send").addEventListener("click",function(e){
+  if(this.classList.contains("off")){e.preventDefault();return;}
+  e.preventDefault();
+  window.location.href=this.href;
+});
+document.getElementById("name").addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
